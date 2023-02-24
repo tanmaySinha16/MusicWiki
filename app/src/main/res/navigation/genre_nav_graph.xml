@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/genre_nav_graph.xml"
+    app:startDestination="@id/genreFragment">
+
+    <fragment
+        android:id="@+id/genreDetailFragment"
+        android:name="com.example.musicwiki.ui.fragments.GenreDetailFragment"
+        android:label="GenreDetailFragment" >
+        <action
+            android:id="@+id/action_genreDetailFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+        <action
+            android:id="@+id/action_genreDetailFragment_to_artistDetailFragment"
+            app:destination="@id/artistDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.example.musicwiki.ui.fragments.AlbumDetailFragment"
+        android:label="AlbumDetailFragment" >
+        <action
+            android:id="@+id/action_albumDetailFragment_to_genreDetailFragment"
+            app:destination="@id/genreDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistDetailFragment"
+        android:name="com.example.musicwiki.ui.fragments.ArtistDetailFragment"
+        android:label="ArtistDetailFragment" >
+        <action
+            android:id="@+id/action_artistDetailFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+        <action
+            android:id="@+id/action_artistDetailFragment_to_genreDetailFragment"
+            app:destination="@id/genreDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="com.example.musicwiki.ui.fragments.AlbumListFragment"
+        android:label="AlbumListFragment" >
+        <action
+            android:id="@+id/action_albumListFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+        <argument
+            android:name="albumName"
+            app:argType="string" />
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistListFragment"
+        android:name="com.example.musicwiki.ui.fragments.ArtistListFragment"
+        android:label="ArtistListFragment" >
+        <action
+            android:id="@+id/action_artistListFragment_to_artistDetailFragment"
+            app:destination="@id/artistDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.example.musicwiki.ui.fragments.GenreFragment"
+        android:label="GenreFragment" >
+        <action
+            android:id="@+id/action_genreFragment_to_genreDetailFragment"
+            app:destination="@id/genreDetailFragment" />
+        <argument
+            android:name="tag"
+            app:argType="string" />
+    </fragment>
+</navigation>
