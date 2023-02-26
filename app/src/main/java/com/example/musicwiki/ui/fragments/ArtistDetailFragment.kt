@@ -101,6 +101,8 @@ class ArtistDetailFragment:Fragment(R.layout.fragment_artist_detail) {
                         artistName.text = artistInfoResponse.artist.name
                         requireView().findViewById<TextView>(R.id.tvFollowers).text="Followers"
                         requireView().findViewById<TextView>(R.id.tvPlaycount).text ="Playcount"
+                        requireView().findViewById<TextView>(R.id.tvArtistTopAlbums).text="Top Albums"
+                        requireView().findViewById<TextView>(R.id.tvArtistTopTracks).text ="Top Tracks"
 
                         val followersText = artistInfoResponse.artist.stats.listeners.toInt()
                         if(followersText>=1000000)
